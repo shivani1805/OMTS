@@ -13,7 +13,7 @@ import com.cg.omts.theatre.entity.TheatreEntity;
 public interface TheatreDao extends JpaRepository<TheatreEntity, Integer> {
 	@Query(value = "Select * from theatre where theatre_city=?1", nativeQuery = true)
 	List<TheatreEntity> getTheatreByCity(String city);
-	@Query(value="Select theatre.movie_list from theatre theatre where theatre_id=?1",nativeQuery=true)
+	@Query(value="Select theatre.movieList from theatre theatre where theatre.theatre_id=?1",nativeQuery=true)
 	List<String> getMovieByTheatreId(Integer theatreId);
 
 }
